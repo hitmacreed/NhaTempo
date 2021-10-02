@@ -1,15 +1,4 @@
-/*
- * App Global CSS
- * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
- * https://ionicframework.com/docs/layout/global-stylesheets
- */
-
-/* Core CSS required for Ionic components to work properly */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
 @import "~@ionic/angular/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
@@ -24,3 +13,71 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+html.ios {
+  --ion-default-font: 'Montserrat', sans-serif;
+}
+
+html.md {
+  --ion-default-font: 'Montserrat', sans-serif;
+}
+
+#main-content>home>ion-app>toolbar>ion-toolbar>ion-buttons>ion-menu-button {
+  font-size: 22px;
+}
+
+.loader {
+  margin-top: 10em;
+}
+
+.modal-wrapper {
+  background: transparent !important;
+}
+
+/* Without setting height the slides will take up the height of the slide's content */
+ion-slides {
+  height: 100%;
+}
+
+.plt-ios {
+  ion-tab-bar {
+    padding-top: var(--ion-safe-area-top);
+
+  }
+
+  ion-header ion-toolbar.noSafeAreaPaddingTop {
+    padding-top: 0 !important;
+  }
+}
+
+ion-toolbar {
+  /* Status bar height on iOS 10 */
+  margin-top: constant(safe-area-inset-top);
+  /* Status bar height on iOS 11.0 */
+  margin-top: env(safe-area-inset-top);
+  /* Status bar height on iOS 11+ */
+
+}
+
+ion-card {
+  --ion-background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 6px !important;
+}
+
+ion-toolbar {
+  --background: #8DB0F4 !important;
+}
+
+ion-checkbox {
+  --background-checked: #7099E8;
+}

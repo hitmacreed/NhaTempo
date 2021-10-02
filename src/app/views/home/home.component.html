@@ -1,0 +1,61 @@
+<ion-app>
+    <toolbar [title]="pageName"></toolbar>
+    <side-menu></side-menu>
+    <ion-content class="homeBlue" no-bounce>
+        <div class="mainContainer">
+            <div class="header vcenter">
+                <h1>{{title}}</h1>
+            </div>
+            <div class="forecast vcenter">
+                <div class="weather center">
+                    <img src="{{iconUrl}}/{{weatherResult?.current?.weather[0]?.icon}}@4x.png" />
+                </div>
+                <div class="info center">
+                    <h4 class="date">{{todayDate}}&nbsp;|&nbsp;{{todayWeekDay}}</h4>
+                    <h1>{{weatherResult?.current?.temp.toFixed(1)}} <span class="centigrados">cº</span></h1>
+                    <h5>{{weatherResult?.current?.weather[0]?.description}}</h5>
+                    <h5 class="humidity vcenter"><i class="fa fa-tint" aria-hidden="true"></i>
+                        Humidade | {{weatherResult?.current?.humidity}}%</h5>
+                    <h5 class="humidity vcenter"><i class="fa fa-tint" aria-hidden="true"></i>
+                        Vento | {{weatherResult?.current?.wind_speed}} kts</h5>
+                </div>
+            </div>
+
+
+            <div class="header ion-padding-top nextDaysTitle">
+                <h3>Previsão para 7 Dias</h3>
+            </div>
+
+            <div class="future vcenter">
+                <ion-slides pager="false" [options]="slideOpts">
+                    <ion-slide *ngFor="let daily of dailyWeather; let i = index">
+                        <ion-card>
+                            <ion-card-content>
+                                <div class="day vcenter">
+                                    <h5>{{moment().day(i).format('dddd')}}</h5>
+                                    <img class="imgDay" src="{{iconUrl}}/{{daily?.weather[0]?.icon}}@4x.png"
+                                        border="0" />
+                                    <div class="temp">{{daily?.temp?.max.toFixed(1)}} cº</div>
+                                </div>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-slide>
+                </ion-slides>
+            </div>
+        </div>
+    </ion-content>
+
+
+    <ion-bottom-sheet [(state)]="sheetState" [title]="'Ilhas'" [dockedHeight]="50" [canBounce]="true"
+        [topDistance]="400" [hideCloseButton]="true" [transition]="transition" [roundBorderOnTop]="true">
+        <ion-list mode="ios">
+            <ion-item *ngFor="let island of isLands;let i= index" mode="md" lines="none">
+                <ion-label position="fixed">{{island.name}}</ion-label>
+                <ion-checkbox slot="end" mode="ios" [(ngModel)]="island.isChecked"
+                    (click)="checkboxSelectIsland(i,island)">
+                </ion-checkbox>
+            </ion-item>
+        </ion-list>
+    </ion-bottom-sheet>
+
+</ion-app>

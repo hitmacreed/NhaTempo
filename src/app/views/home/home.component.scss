@@ -1,0 +1,124 @@
+.homeBlue {
+  --ion-background-color: #8DB0F4;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vcenter {
+  display: flex;
+  align-items: center;
+}
+
+.mainContainer {
+  height: 590px;
+  margin: 0 auto;
+}
+
+.header {
+  height: auto;
+  border-bottom: 2px solid #fff;
+  font-weight: bolder;
+  width: 15em;
+}
+
+.header>h1 {
+  letter-spacing: 2px;
+  color: #fff;
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.header>h3 {
+  letter-spacing: 2px;
+  color: #fff;
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.header>h4 {
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.forecast {
+  height: 300px;
+}
+
+.weather>img {
+  height: 8em;
+}
+
+.info {
+  height: 200px;
+  padding: 20px;
+  padding-left: 40px;
+  color: #fff;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: bold;
+}
+
+.info>h1 {
+  font-size: 56px;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+
+.info>h5 {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.humidity {
+  justify-content: space-between;
+  padding-top: 8px;
+}
+
+.nextDaysTitle {
+  margin-top: 3em;
+}
+
+.future {
+  height: 100px;
+  justify-content: space-around;
+  position: relative;
+  top: 80px;
+}
+
+.day {
+  flex-direction: column;
+}
+
+.day>h5 {
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: #7f8c8d;
+}
+
+.temp {
+  font-weight: bolder;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #4b4b4b;
+}
+
+.day>img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.date {
+  font-size: 16px;
+}
+
+.centigrados {
+  font-size: 0.5em !important;
+  margin-left: 0.1em;
+}
