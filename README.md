@@ -63,7 +63,7 @@ ionic capacitor run <platform> [options] --livereload
  #
 
 ## Preview da App
-<img src="art/preview.gif" width="400" height="800">
+<img src="art/preview.gif" width="344" height="730">
 
  ```bash   _
        .__(.)< (Sou um gato continua a descer... MEOW!!!)
